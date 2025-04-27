@@ -1,14 +1,13 @@
 // "use client"
-import Image from "next/image";
-import { ArrowRightIcon, CheckCircleIcon, Feather, Instagram, LinkedinIcon, RocketIcon, SparkleIcon, TrendingUpIcon, TwitterIcon, ZapIcon } from "lucide-react";
+import { ArrowRightIcon, CheckCircleIcon, Instagram, LinkedinIcon, RocketIcon, SparkleIcon, TrendingUpIcon, TwitterIcon, ZapIcon } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { SignUpButton, useAuth } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 
 
-export default function Home() {
-  const {userId} = auth()
+export default async function Home() {
+  const {userId} = await auth()
   return (
     // p-8 pb-20 gap-16 sm:p-20
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen  font-[family-name:var(--font-geist-sans)]">

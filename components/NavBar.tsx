@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import { SignedIn,SignedOut ,useAuth,SignInButton,SignOutButton,UserButton, SignUpButton } from "@clerk/nextjs"
+import { SignedIn,SignedOut ,useAuth,SignInButton,UserButton, SignUpButton } from "@clerk/nextjs"
 import {useState,useEffect} from 'react'
 import { Menu, X, Zap} from 'lucide-react'
 
