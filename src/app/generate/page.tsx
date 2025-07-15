@@ -135,11 +135,12 @@ export default function GenerateContent() {
       } 
       setIsLoading(true)
       try {
-        const model =genAI.getGenerativeModel({model:"gemini-1.5-pro"})
-        let promptText =`Generate ${ContentType} content about "${prompt}."`
-        if (ContentType === "Twitter") {
-          promptText += "Provide a theard of 5 tweets each under 280 characters."
-        }
+          const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+
+  let promptText = `Generate ${ContentType} content about "${prompt}."`;
+  if (ContentType === "Twitter") {
+    promptText += " Provide a thread of 5 tweets each under 280 characters.";
+  }
         let imagePart: Part | null = null
         if(ContentType === "Instagram" && image ){
           const reader = new FileReader()
