@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe"
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!,{
-    apiVersion:"2025-01-27.acacia"
+// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!,{
+//     apiVersion:"2025-01-27.acacia"
+// });
+const secretKey = process.env.STRIPE_SECRET_KEY;
+
+if (!secretKey) {
+  throw new Error("Missing STRIPE_SECRET_KEY in environment variables");
+}
+
+const stripe = new Stripe(secretKey, {
+  apiVersion: "2025-01-27.acacia",
 });
 
 export async function POST(req:Request){
