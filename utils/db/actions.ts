@@ -141,6 +141,7 @@ export async function getUserPoints(userId:string) {
             console.log("No User found with stripCustomerId", userId)
             return 0
         }
+        return users[0].points;
     } catch (error) {
         console.error("Error fetching user points:", error)
         return 0
